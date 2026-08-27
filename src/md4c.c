@@ -109,11 +109,11 @@
 #elif defined __GNUC__ && __GNUC__ >= 7
     #define MD_FALLTHROUGH()        __attribute__((fallthrough))
 #else
-    #define MD_FALLTHROUGH()        ((void)0)
+    #define MD_FALLTHROUGH()        (void)(0)
 #endif
 
 /* Suppress "unused parameter" warnings. */
-#define MD_UNUSED(x)                ((void)x)
+#define MD_UNUSED(x)                (void)(x)
 
 
 /******************************
