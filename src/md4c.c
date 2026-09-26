@@ -199,12 +199,7 @@ struct MD_CTX_tag {
     MD_MARK* marks;
     int n_marks;
     int alloc_marks;
-
-#if defined MD4C_USE_UTF16
     char mark_char_map[128];
-#else
-    char mark_char_map[256];
-#endif
 
     /* For resolving of inline spans. */
     MD_MARKSTACK opener_stacks[20];
