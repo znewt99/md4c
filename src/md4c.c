@@ -3263,14 +3263,7 @@ md_collect_marks(MD_CTX* ctx, const MD_LINE* lines, MD_SIZE n_lines, int table_m
         while(true) {
             CHAR ch;
 
-#ifdef MD4C_USE_UTF16
-    /* For UTF-16, mark_char_map[] covers only ASCII. */
-    #define IS_MARK_CHAR(off)   ((CH(off) < SIZEOF_ARRAY(ctx->mark_char_map))  &&  \
-                                (ctx->mark_char_map[(unsigned char) CH(off)]))
-#else
-    /* For 8-bit encodings, mark_char_map[] covers all 256 elements. */
     #define IS_MARK_CHAR(off)   (ctx->mark_char_map[(unsigned char) CH(off)])
-#endif
 
             /* Optimization: Use some loop unrolling. */
             while(off + 3 < line->end  &&  !IS_MARK_CHAR(off+0)  &&  !IS_MARK_CHAR(off+1)
