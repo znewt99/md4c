@@ -65,12 +65,6 @@ New Features:
 
 Changes:
 
-  * Accept `<video>` as HTML block starting condition (type 6), beyond what
-    the CommonMark specification requires.
-
-    See [the specification](https://spec.commonmark.org/0.31.2/#html-blocks)
-    for more info what it is.
-
   * Permissive autolinks (`MD_FLAG_PERMISSIVExxxAUTOLINKS` flags) have been
     improved in several ways:
      - some more links with non-alphanumeric characters are now recognized,
@@ -89,6 +83,15 @@ Changes:
   * Better detection (and suppression) of too sparse tables, which would
     otherwise generate too disproportionately large output.
     (See [#345](https://github.com/mity/md4c/pull/345) for more information.)
+
+  * For the sake completeness, we've made our Unicode-specific code compliant
+    to Unicode 18.0, again.
+
+    Explanation: By mistake we added into MD4C version 0.5.3 support for the
+    Unicode standard based on pre-release version of it (probably 18.0.0 alfa).
+    This has now been amended and our Unicode data tables re-generated with the
+    correct final official version 18.0.0 of the standard. (Resulting in
+    exactly the same tables, so strictly speaking this is a non-change.)
 
 Fixes:
 
@@ -143,7 +146,7 @@ Changes:
     tiny bit more permissive, allowing `+` and `-` characters to be anywhere
     in the path portion of the URL. This also improves compatibility with GFM.
 
-  * Make Unicode-specific code compliant to Unicode 18.0.
+  * Make Unicode-specific code compliant to Unicode 18.0.0.
 
 Fixes:
 
