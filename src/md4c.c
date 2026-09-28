@@ -23,7 +23,6 @@
  * IN THE SOFTWARE.
  */
 
-#include <assert.h>
 #include <limits.h>
 #include <stdbool.h>
 #include <stdint.h>
@@ -70,6 +69,7 @@
     } while(0)
 
 #ifdef DEBUG
+    #include <assert.h>
     #define MD_UNREACHABLE()        assert(1 == 0)
 #else
     #undef NDEBUG
