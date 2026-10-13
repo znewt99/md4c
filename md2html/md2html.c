@@ -31,8 +31,6 @@
 #include "md4c-html.h"
 #include "cmdline.h"
 
-
-
 /* Global options. */
 static unsigned parser_flags = 0;
 #ifndef MD4C_USE_ASCII
@@ -47,7 +45,6 @@ static int want_replay_fuzz = 0;
 
 static const char* html_title = NULL;
 static const char* css_path = NULL;
-
 
 /*********************************
  ***  Simple grow-able buffer  ***
@@ -111,7 +108,6 @@ membuf_append(struct membuffer* buf, const char* data, MD_SIZE size)
     memcpy(buf->data + buf->size, data, size);
     buf->size += size;
 }
-
 
 /**********************
  ***  Main program  ***
@@ -234,7 +230,6 @@ out:
 
     return ret;
 }
-
 
 static const CMDLINE_OPTION cmdline_options[] = {
     { 'o', "output",                        'o', CMDLINE_OPTFLAG_REQUIREDARG },
